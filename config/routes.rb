@@ -8,14 +8,10 @@ Rails.application.routes.draw do
   get 'pages/link'
   
   resources :users
+  resources :topics 
   
-  resources :topics do
-  get 'comments/index'
+  get 'comments/new'
   post '/comments', to: 'comments#create'
-  delete '/comments', to: 'comments#destroy'
-  end
-  
-  
   
   get 'favorites/index'
   post '/favorites', to: 'favorites#create'
